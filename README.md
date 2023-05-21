@@ -87,6 +87,8 @@ http://localhost:8080/ingredients
 ```java
  http://localhost:8080/swagger-ui/index.html#/
 ```
+![image](https://github.com/Sowndarya9920/Recipe_Management_System/assets/112794922/29532ed4-f71d-44d2-b4bd-b38f75c68641)
+
 
 ## :seven: View in mySql Database
 
