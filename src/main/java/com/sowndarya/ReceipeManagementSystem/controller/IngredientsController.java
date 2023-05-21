@@ -1,0 +1,58 @@
+package com.sowndarya.ReceipeManagementSystem.controller;
+
+import com.sowndarya.ReceipeManagementSystem.model.Ingredients;
+import com.sowndarya.ReceipeManagementSystem.service.IngredientsService;
+import com.sowndarya.ReceipeManagementSystem.service.TokenService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+public class IngredientsController {
+    @Autowired
+    IngredientsService iService;
+
+    @Autowired
+    TokenService tokenService;
+
+    @PostMapping("/ingredients")
+    public ResponseEntity<String> createRecipe(@RequestBody List<Ingredients> ingredients, @RequestParam String email, @RequestParam String token) {
+        HttpStatus status;
+        String message;
+        if (tokenService.authenticate(email, token)) {
+            iService.createIngredients(ingredients, token);
+            message = "Ingredients created successfully";
+            status = HttpStatus.OK;
+        } else {
+            message = "Invalid user";
+            status = HttpStatus.FORBIDDEN;
+        }
+        return new ResponseEntity<>(message, status);
+    }
+    @GetMapping("/ingredients")
+    public List<Ingredients> getIngredients(@RequestParam String token, @RequestParam String email) {
+
+        if (tokenService.authenticate(email, token)) {
+            return iService.getIngredients(email, token);
+        }
+        return null;
+    }
+
+    @DeleteMapping("/ingredients")
+    public ResponseEntity<String> deleteRecipe (@RequestParam Long id , @RequestParam String token , @RequestParam String email){
+        HttpStatus status;
+        String message;
+        if (tokenService.authenticate(email, token)) {
+            iService.deleteIngredients(id, token);
+            message = "Ingredients removed successfully";
+            status = HttpStatus.OK;
+        } else {
+            message = "Invalid user";
+            status = HttpStatus.FORBIDDEN;
+        }
+        return new ResponseEntity<>(message, status);
+    }
+}
