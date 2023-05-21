@@ -1,6 +1,6 @@
    ![Recipe-Management](https://github.com/Sowndarya9920/Recipe_Management_System/assets/112794922/0bf49c3b-4d8f-4ee7-850d-377bd20f5af2)
    
-   ##### 🔸: This is simple recipe management system built using Spring Boot framework. The idea was to build  a simple recipe management to perform basic CRUD operations                  with some validations and also auhentication.
+   ##### 🔸This is simple recipe management system built using Spring Boot framework. The idea was to build  a simple recipe management to perform basic CRUD operations                  with some validations and also auhentication.
 ## :one: Frameworks and Languages Used -
     1. SpringBoot
     2. JAVA
@@ -70,7 +70,7 @@ http://localhost:8080/signIn
 
 #### :white_check_mark: PremiumRole Controller
 ```java
-http:localhost:8080/roles
+http://localhost:8080/roles
 ```
 
 #### :white_check_mark: Recipe Controller
@@ -93,8 +93,9 @@ http://localhost:8080/ingredients
 
 #  Summary
 - :small_orange_diamond:  This is a sample recipe management system that allows two users :
-- :one: Normal  :two: Admin
-- :small_orange_damond: Admin users have all access to perform all the CRUD operations whereas the normal users can only edit and view the receipes.
--  :small_orange_damond: The API is built using mySQL database to store the recipes,ingredients and all its fields . IP Address of the deployment link must be static to ensure its availability. Additionally , the Api's uses annotation based validations to ensure that all the user inputs are valid before being processed.
--  :small_orange_damond: Therefore , this project provides a scalable and secure API that allows to manage all the datas.
+- :one: Normal
+- :two: Admin
+- :small_orange_diamond: Admin users have all access to perform all the CRUD operations whereas the normal users can only edit and view the receipes.
+-  :small_orange_diamond: The API is built using mySQL database to store the recipes,ingredients and all its fields . IP Address of the deployment link must be static to ensure its availability. Additionally , the Api's uses annotation based validations to ensure that all the user inputs are valid before being processed.
+-  :small_orange_diamond: Therefore , this project provides a scalable and secure API that allows to manage all the datas.
 
