@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -69,5 +70,9 @@ public class UserService {
         tokenService.saveToken(token);
         return new SignInOutput("Authentication done successfully...",token.getToken());
 
+    }
+
+    public List<User> getUsers() {
+        return userRepo.findAll();
     }
 }
