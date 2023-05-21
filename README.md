@@ -92,6 +92,9 @@ http://localhost:8080/ingredients
 
 ## :seven: View in mySql Database
 
+![image](https://github.com/Sowndarya9920/Recipe_Management_System/assets/112794922/3e6f6f82-002c-4846-8146-672facd32099)
+
+
 
 #  Summary
 - :small_orange_diamond:  This is a sample recipe management system that allows two users :
