@@ -15,4 +15,8 @@ public class PremiumRole {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long roleId;
     private String role;
+
+    @OneToOne
+    @JoinColumn(name = "fk_user_id")
+    private User user;
 }

@@ -24,19 +24,6 @@ public class PremiumRoleService {
         }else
             return "You don't have the access to create premium roles..";
     }
-    public boolean validateUserRole(String email, PremiumRole role) {
-        if(role.getRoleId()==1){
-            Pattern p = Pattern.compile("^.*@headadmin\\.com$");
-            Matcher m = p.matcher(email);
-            if((m.find() && m.group().equals(email)))
-                return true;
-            else
-                return false;
-        }else{
-            if(role.getRoleId()==2)
-                return true;
-            else
-                return false;
-        }
-    }
+
+
 }

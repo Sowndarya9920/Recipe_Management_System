@@ -36,10 +36,8 @@ public class UserService {
         }catch(NoSuchAlgorithmException e){
             e.printStackTrace();
         }
-        if(!(roleService.validateUserRole(signUpDto.getEmail(), signUpDto.getRole()))){
-            throw new IllegalStateException("Please enter the valid details....");
-        }
-        user = new User(signUpDto.getUserName(),encryptedPassword,signUpDto.getEmail(),signUpDto.getRole());
+
+        user = new User(signUpDto.getUserName(),encryptedPassword,signUpDto.getEmail());
         userRepo.save(user);
         return new SignUpOutput("Recipe Management User registered","Account has been created successfully");
     }

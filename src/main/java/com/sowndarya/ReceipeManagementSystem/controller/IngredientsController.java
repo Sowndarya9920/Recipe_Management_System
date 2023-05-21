@@ -33,12 +33,12 @@ public class IngredientsController {
         return new ResponseEntity<>(message, status);
     }
     @GetMapping("/ingredients")
-    public List<Ingredients> getIngredients(@RequestParam String token, @RequestParam String email) {
+    public ResponseEntity<String>  getIngredients(@RequestParam String token, @RequestParam String email) {
 
         if (tokenService.authenticate(email, token)) {
-            return iService.getIngredients(email, token);
+            List<Ingredients> i1 =  iService.getIngredients(email, token);
         }
-        return null;
+        return new ResponseEntity<>("",HttpStatus.OK);
     }
 
     @DeleteMapping("/ingredients")

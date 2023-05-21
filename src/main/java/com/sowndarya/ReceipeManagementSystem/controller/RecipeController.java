@@ -35,12 +35,12 @@ public class RecipeController {
     }
 
     @GetMapping("/recipe")
-    public List<Recipe> getRecipe(@RequestParam String token, @RequestParam String email) {
+    public ResponseEntity<String> getRecipe(@RequestParam String token, @RequestParam String email) {
 
         if (tokenService.authenticate(email, token)) {
-            return recipeService.getRecipe(email, token);
+            List<Recipe> r1 =  recipeService.getRecipe(email, token);
         }
-        return null;
+        return new ResponseEntity<>(" ",HttpStatus.OK);
     }
 
     @PutMapping("/recipe")

@@ -1,6 +1,9 @@
 package com.sowndarya.ReceipeManagementSystem.dto;
 
 import com.sowndarya.ReceipeManagementSystem.model.PremiumRole;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +12,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SignUpInput {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
     private String userName;
     private String password;
     private String email;
-    private PremiumRole role;
 }
