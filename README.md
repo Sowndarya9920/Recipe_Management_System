@@ -52,7 +52,7 @@
 #### :o: IUserDao.java
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-### :white_flower: 5. Dto : Data access object
+### :white_flower: 5. Dto : Data transfer object
 #### :o: SignInInput.java
 #### :o: SignInOutput.java
 #### :o: SignUpInput.java
